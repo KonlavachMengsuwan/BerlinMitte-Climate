@@ -111,3 +111,35 @@ ggplot(data = temperature_2020,  aes(x = DATE, y = TG)) +
 ![](ggplot.png)<!-- -->
 
 
+## Reset rownames
+```{r}
+nrow(temperature_2020)
+# 366
+
+rownames(temperature_2020) <- 1:nrow(temperature_2020)
+```
+
+## minimum temperature of year 2020
+```{r}
+min(temperature_2020$TG)
+# -0.6
+
+# which row has temperature of -0.6
+which(temperature_2020$TG == min(temperature_2020$TG))
+
+# Show detail of row 338
+temperature_2020[338,]
+
+```
+
+![](min-temp.png)<!-- -->
+
+
+# This one line code provide the same result
+```{r}
+temperature_2020[which(temperature_2020$TG == min(temperature_2020$TG)),]
+
+```
+![](min-temp.png)<!-- -->
+
+
