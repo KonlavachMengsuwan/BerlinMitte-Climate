@@ -6,53 +6,67 @@ output: html_notebook
 # Berlin Mitte Daily Precipitation and Mean Temperature
 ## Data source: <https://www.ecad.eu/dailydata/index.php>
 
-## Read ASCII file
+## Load ggplot2 package for visualization
 ```{r}
 library(ggplot2)
+```
 
+## Read text file
+```{r}
+## Make first line as header of table
+## Separate by ,
+## Skip first 18 lines
+## Clean missing value
 temperature <- read.csv("Mean-Temperature/TG_STAID004563.txt", header = TRUE, sep = ",", skip = 18, na.strings = c("NA", " ", "-9999"))
+```
 
+## Display structure of the object
+```{r}
 str(temperature)
+```
 
+## Check the first few lines of dataframe
+```{r}
 head(temperature)
+```
 
+## Date Conversion from interger
+```{r}
 temperature$DATE = as.Date(as.character(temperature$DATE), format='%Y%m%d')
 
-str(temperature)
-head(temperature)
+class(temperature$DATE)
+# "Date"
 
+head(temperature)
+```
+## Quick plot
+```{r}
 qplot(x = temperature$DATE,
       y = temperature$TG)
 ```
 
-```{r}
-ggplot(data = temperature)
-
-ggplot(data = temperature, aes(x = temperature$DATE, y = temperature$TG))
-
-ggplot(data = temperature, aes(x = temperature$DATE, y = temperature$TG)) + geom_point()
-
-
-```
-
-
+## Mean temperature from data = 0.1 * TG
 ```{r}
 temperature$TG = temperature$TG * 0.1
 
-str(temperature)
+# From "integer" to "numeric" class
 class(temperature$TG)
+# "numberic"
 
 qplot(x = temperature$DATE,
       y = temperature$TG)
 
 ```
-
+## Data start from
 ```{r}
 min(temperature$DATE)
 ```
+## Data end on
 ```{r}
 max(temperature$DATE)
 ```
+
+# Replicate data from year 2020
 ```{r}
 temperature_2020 = temperature[temperature$DATE >= "2020-01-01" & temperature$DATE <= "2020-12-31",]
 
