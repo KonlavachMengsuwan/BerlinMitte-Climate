@@ -97,7 +97,17 @@ qplot(x = temperature_2020$DATE,
 ```
 ![](Quickplot_Temp2020.png)<!-- -->
 
+## Plot with ggplot
 
+```{r}
+ggplot(data = temperature_2020,  aes(x = DATE, y = TG)) +
+    geom_point(alpha = 0.9, aes(color = TG)) +
+    labs(x = "Date",
+      y = "Temperature (C)",
+      title = "Daily Mean Temperature (C)",
+      subtitle = "Berlin - Mitte, Germany 2020") + theme_bw(base_size = 9)
+```
 
+![](ggplot.png)<!-- -->
 
 
