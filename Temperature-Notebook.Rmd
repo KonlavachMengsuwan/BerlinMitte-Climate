@@ -1,5 +1,3 @@
-# BerlinMitte-Climate
-
 ---
 title: "BerlinMitte-Climate"
 output: html_notebook
