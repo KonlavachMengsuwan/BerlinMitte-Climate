@@ -35,6 +35,8 @@ str(temperature)
 ```{r}
 head(temperature)
 ```
+![](Head_First.png)<!-- -->
+
     
 
 ## Date Conversion from interger
@@ -46,11 +48,16 @@ class(temperature$DATE)
 
 head(temperature)
 ```
+![](Head_Second.png)<!-- -->
+
+
 ## Quick plot
 ```{r}
 qplot(x = temperature$DATE,
       y = temperature$TG)
 ```
+![](quick_plot_temperature.png)<!-- -->
+
 
 ## Mean temperature from data = 0.1 * TG
 ```{r}
@@ -64,6 +71,9 @@ qplot(x = temperature$DATE,
       y = temperature$TG)
 
 ```
+![](quickplot_converted_temp.png)<!-- -->
+
+
 ## Data start from
 ```{r}
 min(temperature$DATE)
@@ -85,7 +95,7 @@ qplot(x = temperature_2020$DATE,
       y = temperature_2020$TG)
 
 ```
-
+![](Quickplot_Temp2020.png)<!-- -->
 
 
 
