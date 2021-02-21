@@ -35,7 +35,7 @@ str(temperature)
 ```{r}
 head(temperature)
 ```
-![](Head_First.png)<!-- -->
+![](Head_First.PNG)<!-- -->
 
     
 
@@ -48,7 +48,7 @@ class(temperature$DATE)
 
 head(temperature)
 ```
-![](Head_Second.png)<!-- -->
+![](Head_Second.PNG)<!-- -->
 
 
 ## Quick plot
@@ -71,7 +71,7 @@ qplot(x = temperature$DATE,
       y = temperature$TG)
 
 ```
-![](quickplot_converted_temp.png)<!-- -->
+![](qucikplot_converted_temp.png)<!-- -->
 
 
 ## Data start from
