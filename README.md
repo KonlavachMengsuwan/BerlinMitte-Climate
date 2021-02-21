@@ -24,11 +24,18 @@ temperature <- read.csv("Mean-Temperature/TG_STAID004563.txt", header = TRUE, se
 ```{r}
 str(temperature)
 ```
+    Show in New WindowClear OutputExpand/Collapse Output
+    'data.frame':	52961 obs. of  4 variables:
+    $ SOUID: int  127488 127488 127488 127488 127488 127488 127488 127488     127488 127488 ...
+    $ DATE : int  18760101 18760102 18760103 18760104 18760105 18760106      18760107 18760108 18760109 18760110 ...
+    $ TG   : int  22 25 3 -58 -98 -77 -66 -89 -127 -89 ...
+    $ Q_TG : int  0 0 0 0 0 0 0 0 0 0 ...
 
 ## Check the first few lines of dataframe
 ```{r}
 head(temperature)
 ```
+    
 
 ## Date Conversion from interger
 ```{r}
@@ -61,10 +68,14 @@ qplot(x = temperature$DATE,
 ```{r}
 min(temperature$DATE)
 ```
+    [1] "1876-01-01"
+
 ## Data end on
 ```{r}
 max(temperature$DATE)
 ```
+    [1] "2020-12-31"
+
 
 # Replicate data from year 2020
 ```{r}
