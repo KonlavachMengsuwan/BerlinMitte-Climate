@@ -132,7 +132,7 @@ temperature_2020[338,]
 
 ```
 
-![](min-temp.png)<!-- -->
+![](min-temp.PNG)<!-- -->
 
 
 # This one line code provide the same result
@@ -140,6 +140,6 @@ temperature_2020[338,]
 temperature_2020[which(temperature_2020$TG == min(temperature_2020$TG)),]
 
 ```
-![](min-temp.png)<!-- -->
+![](min-temp.PNG)<!-- -->
 
 
